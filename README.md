@@ -224,3 +224,137 @@ curl -X PUT http://localhost:3050/v1/torneo/1 \
 curl -X DELETE http://localhost:3050/v1/torneo/1
 
 ```
+
+### Entidad: Árbitros
+
+- **Ruta Base:** `http://localhost:3000/api/v1/arbitro`
+
+#### 1. Obtener todos los árbitros
+- **Método:** `GET`
+- **Endpoint:** `/api/v1/arbitro`
+```bash
+curl -X GET http://localhost:3000/api/v1/arbitro
+
+```
+
+#### 2. Obtener un árbitro por ID
+
+* **Método:** `GET`
+* **Endpoint:** `/api/v1/arbitro/:id`
+
+```bash
+curl -X GET http://localhost:3000/api/v1/arbitro/1
+
+```
+
+#### 3. Crear un nuevo árbitro
+
+* **Método:** `POST`
+* **Endpoint:** `/api/v1/arbitro`
+
+```bash
+curl -X POST http://localhost:3000/api/v1/arbitro \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nombre": "Roberto Rosetti",
+    "edad": 42,
+    "salario": 2500,
+    "rol_preferido": "Principal"
+  }'
+
+```
+
+#### 4. Actualizar un árbitro por ID
+
+* **Método:** `PUT`
+* **Endpoint:** `/api/v1/arbitro/:id`
+
+```bash
+curl -X PUT http://localhost:3000/api/v1/arbitro/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nombre": "Roberto Rosetti",
+    "edad": 43,
+    "salario": 2800,
+    "rol_preferido": "VAR"
+  }'
+
+```
+
+#### 5. Eliminar un árbitro por ID
+
+* **Método:** `DELETE`
+* **Endpoint:** `/api/v1/arbitro/:id`
+
+```bash
+curl -X DELETE http://localhost:3000/api/v1/arbitro/1
+
+```
+
+### Entidad: Partidos
+
+* **Ruta Base:** `http://localhost:3000/api/v1/partido`
+
+#### 1. Obtener todos los partidos
+
+* **Método:** `GET`
+* **Endpoint:** `/api/v1/partido`
+
+```bash
+curl -X GET http://localhost:3000/api/v1/partido
+
+```
+
+#### 2. Obtener un partido por ID
+
+* **Método:** `GET`
+* **Endpoint:** `/api/v1/partido/:id`
+
+```bash
+curl -X GET http://localhost:3000/api/v1/partido/1
+
+```
+
+#### 3. Crear un nuevo partido
+
+* **Método:** `POST`
+* **Endpoint:** `/api/v1/partido`
+
+```bash
+curl -X POST http://localhost:3000/api/v1/partido \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ciudad": "Madrid",
+    "estadio": "Santiago Bernabéu",
+    "arbitroId": 1,
+    "puntos_local": 2,
+    "puntos_visita": 1,
+    "fecha": "2026-10-15"
+  }'
+
+```
+
+#### 4. Actualizar un partido por ID
+
+* **Método:** `PUT`
+* **Endpoint:** `/api/v1/partido/:id`
+
+```bash
+curl -X PUT http://localhost:3000/api/v1/partido/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "puntos_local": 3,
+    "puntos_visita": 1
+  }'
+
+```
+
+#### 5. Eliminar un partido por ID
+
+* **Método:** `DELETE`
+* **Endpoint:** `/api/v1/partido/:id`
+
+```bash
+curl -X DELETE http://localhost:3000/api/v1/partido/1
+
+```
