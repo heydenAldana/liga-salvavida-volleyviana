@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const arbitroId = parseInt(req.params.id);
     const arbitro = arbitros.find((e) => e.id === arbitroId);
-    if (juezId < 1) {
+    if (arbitroId < 1) {
         return res.status(400).json({ error: "El valor ingresado no es válido" });
     }
     else if (!arbitro) {
@@ -39,12 +39,12 @@ router.post('/', (req, res) => {
 // PUT /arbitros/:id
 router.put('/:id', (req, res) => {
     const arbitroId = parseInt(req.params.id);
-    const updatedArbitro = req.body;
+    const data = req.body;
     const existingId = arbitros.findIndex((e) => e.id === arbitroId);
     if (existingId === -1) {
         return res.status(404).json({ error: 'Arbitro no encontrado' });
     }
-    arbitros[existingId] = { ...arbitros[existingId], ...updatedArbitro };
+    arbitros[existingId] = { ...arbitros[existingId], ...data};
     res.json(arbitros[existingId]);
 });
 
@@ -55,7 +55,7 @@ router.delete('/:id', (req, res) => {
     if (existingId === -1) {
         return res.status(404).json({ error: 'Arbitro no encontrado' });
     }
-    const deletedArbitro = arbitros.splice(existingEquipoIndex, 1);
+    const deletedArbitro = arbitros.splice(existingId, 1);
     res.json(deletedArbitro[0]);
 });
 
