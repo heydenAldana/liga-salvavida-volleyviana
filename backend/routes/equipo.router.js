@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   else if (!equipo) {
     return res.status(404).json({ error: 'Equipo no encontrada' });
   }
-  res.json(task);
+  res.json(equipo);
 });
 
 // POST /equipo
