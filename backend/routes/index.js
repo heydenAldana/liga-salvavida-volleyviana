@@ -2,6 +2,8 @@ const express = require('express');
 const equiposRouter = require('./equipo.router');
 const jugadoresRouter = require('./jugador.router');
 const torneoRouter = require('./torneo.router');
+const partidoRouter = require('./partido.router');
+const arbitroRouter = require('./arbitro.router');
 
 const routerApi = (app) => {
   const router = express.Router();
@@ -9,7 +11,9 @@ const routerApi = (app) => {
 
   router.use('/equipo', equiposRouter);
   router.use('/jugador', jugadoresRouter);
-  router.use('/torneo', torneoRouter)
+  router.use('/torneo', torneoRouter);
+  router.use('/partido', partidoRouter);
+  router.use('/arbitro', arbitroRouter);
 }
 
 module.exports = routerApi;
