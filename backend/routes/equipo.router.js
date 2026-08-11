@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   else if (!equipo) {
     return res.status(404).json({ error: 'Equipo no encontrada' });
   }
-  res.json(task);
+  res.json(equipo);
 });
 
 // POST /equipo
@@ -47,10 +47,10 @@ router.put('/:id', (req, res) => {
   res.json(equipos[existingEquipoIndex]);
 });
 
-// DELETE /tasks/:id
+// DELETE /equipo/:id
 router.delete('/:id', (req, res) => {
   const equipoId = parseInt(req.params.id);
-  const existingEquipoIndex = tasks.findIndex((e) => e.id === equipoId);
+  const existingEquipoIndex = equipos.findIndex((e) => e.id === equipoId);
   if (existingEquipoIndex === -1) {
     return res.status(404).json({ error: 'Equipo no encontrada' });
   }
