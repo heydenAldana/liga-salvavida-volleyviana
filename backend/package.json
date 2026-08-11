@@ -13,8 +13,10 @@
   "license": "ISC",
   "author": "Heyden Aldana, Tommy Lee Pon",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
