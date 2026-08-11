@@ -12,8 +12,8 @@ Este pretende ser un ejercicio rápido en clase como repaso del manejo de backen
 ## Como ejecutar el backend
 ``` Bash
 cd backend
-npm install         # Instalar express.js y depedencias definidas en el package.json
-npm run dev       # Hot reload
+npm install      # Instalar express.js y depedencias definidas en el package.json
+npm run dev      # Hot reload
 npm run start    # Estático
 ```
 
@@ -51,7 +51,7 @@ curl -X POST http://localhost:3050/v1/equipo \
   -H "Content-Type: application/json" \
   -d '{
     "nombre": "Los Rayos",
-    "numeroIntegrantes": 11,
+    "numeroIntegrantes": 10,
     "lema": "Siempre hacia adelante"
   }'
 
@@ -68,7 +68,7 @@ curl -X PUT http://localhost:3050/v1/equipo/1 \
   -d '{
     "nombre": "Rayos F.C.",
     "numeroIntegrantes": 12,
-    "lema": "Unidos por la victoria"
+    "lema": "Unidos por Victoria FC"
   }'
 
 ```
@@ -121,7 +121,7 @@ curl -X POST http://localhost:3050/v1/jugador \
     "nombre": "Carlos Pérez",
     "edad": 24,
     "sexo": "M",
-    "posición": "Delantero"
+    "posición": "Colocador"
   }'
 
 ```
@@ -138,7 +138,7 @@ curl -X PUT http://localhost:3050/v1/jugador/1 \
     "nombre": "Carlos Pérez",
     "edad": 25,
     "sexo": "M",
-    "posición": "Centrocampista"
+    "posición": "Libero"
   }'
 
 ```
@@ -206,7 +206,7 @@ curl -X POST http://localhost:3050/v1/torneo \
 curl -X PUT http://localhost:3050/v1/torneo/1 \
   -H "Content-Type: application/json" \
   -d '{
-    "nombre": "Copa Verano 2026 Edición Especial",
+    "nombre": "Copa Verano 2026 Edición Caguawama",
     "duracion": "3 meses",
     "cantMaxEquipos": 20,
     "fechaInicio": "2026-09-01",
