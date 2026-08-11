@@ -47,7 +47,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   const torneoId = parseInt(req.params.id);
-  const existingTorneoIndex = tasks.findIndex((e) => e.id === torneoId);
+  const existingTorneoIndex = torneos.findIndex((e) => e.id === torneoId);
   if (existingTorneoIndex === -1) {
     return res.status(404).json({ error: 'Torneo no encontrado' });
   }

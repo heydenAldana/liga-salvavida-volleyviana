@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  const jugadoresId = parseInt(req.params.id);
-  const jugador = jugadores.find((e) => e.id === jugadoresId);
+  const jugadorId = parseInt(req.params.id);
+  const jugador = jugadores.find((e) => e.id === jugadorId);
   if (jugadorId < 1) {
     return res.status(400).json({ error: "El valor ingresado no es válido" });
   }
@@ -46,7 +46,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   const jugadorId = parseInt(req.params.id);
-  const existingJugadorIndex = tasks.findIndex((e) => e.id === jugadorId);
+  const existingJugadorIndex = jugadores.findIndex((e) => e.id === jugadorId);
   if (existingJugadorIndex === -1) {
     return res.status(404).json({ error: 'Jugador no encontrada' });
   }
