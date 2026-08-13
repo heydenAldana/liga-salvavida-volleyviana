@@ -5,7 +5,7 @@ let animes = [];
 
 router.get('/animes', async (req, res) => {
   try {
-    const response = await fetch('http://api.anidb.net:9001/httpapi?request=anime');
+    const response = await fetch('http://anidb.net/api/anime-titles.xml.gz');
     const data = await response.json();
     res.json(data)
   } catch (error) {
